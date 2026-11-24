@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https:">
+  <title>Project explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name" id="repoName"></span>
+      </div>
+      <nav class="tabs" aria-label="Views">
+        <a href="#overview" data-view="overview">Overview</a>
+        <a href="#architecture" data-view="architecture">Architecture</a>
+        <a href="#stack" data-view="stack">Stack</a>
+        <a href="#files" data-view="files">Files</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="view" id="view-overview" aria-label="Overview">
+      <div class="hero">
+        <div>
+          <p class="eyebrow" id="heroEyebrow"></p>
+          <h1 id="heroTitle"></h1>
+          <p class="lede" id="heroSummary"></p>
+          <div class="chips" id="heroChips"></div>
+        </div>
+        <dl class="kpis" id="heroKpis"></dl>
+      </div>
+      <div class="split">
+        <article class="card readme" id="readme"></article>
+        <aside class="side">
+          <div class="card"><h2 class="card__title">Languages</h2><div id="langMini"></div></div>
+          <div class="card" id="labCard" hidden><h2 class="card__title">Health check</h2><div id="labBody"></div></div>
+          <div class="card" id="tocCard"><h2 class="card__title">In this README</h2><ol class="toc" id="toc"></ol></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="view" id="view-architecture" aria-label="Architecture" hidden>
+      <div class="view__head">
+        <div>
+          <h1>Architecture</h1>
+          <p class="muted" id="archNote"></p>
+        </div>
+        <label class="select" id="composePick" hidden>
+          <span>Compose file</span>
+          <select id="composeSelect"></select>
+        </label>
+      </div>
+      <div class="card diagram" id="diagram"></div>
+      <div class="grid3" id="archDetails"></div>
+    </section>
+
+    <section class="view" id="view-stack" aria-label="Stack" hidden>
+      <div class="view__head"><div><h1>Tech stack</h1><p class="muted">Languages by code size, declared dependencies and container images.</p></div></div>
+      <div class="card"><h2 class="card__title">Languages</h2><div class="langbar" id="langBar"></div><ul class="legend" id="langLegend"></ul></div>
+      <div class="grid2">
+        <div class="card"><h2 class="card__title">Python packages</h2><div class="chips chips--wrap" id="depsPython"></div></div>
+        <div class="card"><h2 class="card__title">JavaScript packages</h2><div class="chips chips--wrap" id="depsNode"></div></div>
+      </div>
+      <div class="card"><h2 class="card__title">Container images</h2><table class="table" id="imagesTable"></table></div>
+    </section>
+
+    <section class="view" id="view-files" aria-label="Files" hidden>
+      <div class="view__head">
+        <div><h1>Files</h1><p class="muted" id="filesNote"></p></div>
+        <input class="search" id="fileSearch" type="search" placeholder="Filter files" aria-label="Filter files">
+      </div>
+      <div class="grid-files">
+        <div class="card tree" id="tree"></div>
+        <div class="card"><h2 class="card__title">Top-level folders</h2><div id="folderBars"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" id="foot"></footer>
+</body>
+</html>

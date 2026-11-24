@@ -1,5 +1,20 @@
 # Content Localization
 
+<!-- frontend:start -->
+## Project explorer
+
+A browsable front end for this repository, built from its own README, Compose files, dependency manifests and folder layout. Clone the repository and open `frontend/index.html` in a browser to explore it.
+
+| Overview | Architecture |
+|---|---|
+| ![Overview](docs/frontend/overview.png) | ![Architecture](docs/frontend/architecture.png) |
+
+| Tech stack | Files |
+|---|---|
+| ![Tech stack](docs/frontend/stack.png) | ![Files](docs/frontend/files.png) |
+<!-- frontend:end -->
+
+
 The Content Localization Blueprint is a comprehensive solution for translating and dubbing audio and video content using AI services. It is a microservices architecture that orchestrates three main AI services:
 
 - **Speech-to-Speech (S2S)**: Translates audio from one language to another with voice preservation
